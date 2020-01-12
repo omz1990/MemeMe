@@ -13,11 +13,29 @@ UINavigationControllerDelegate {
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var topText: UITextField!
+    
+    private let memeTextAttributes: [NSAttributedString.Key: Any] = [
+        NSAttributedString.Key.strokeColor: UIColor.white,
+        NSAttributedString.Key.foregroundColor: UIColor.black,
+        NSAttributedString.Key.strokeWidth: 2.0]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setMemeTextAttributes()
+    }
+    
+    private func setMemeTextAttributes() {
+        topText.defaultTextAttributes = memeTextAttributes
+        topText.textAlignment = .center
+        topText.text = "TOP"
     }
 
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {

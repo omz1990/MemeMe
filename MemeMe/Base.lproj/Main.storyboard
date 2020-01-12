@@ -32,15 +32,27 @@
                             </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uNV-sE-Nvq">
                                 <rect key="frame" x="0.0" y="44" width="414" height="720"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xi2-J7-ooG">
+                                <rect key="frame" x="0.0" y="64" width="414" height="57.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="xi2-J7-ooG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1LL-Bi-EfF"/>
                             <constraint firstItem="uNV-sE-Nvq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3QP-1z-g73"/>
+                            <constraint firstItem="xi2-J7-ooG" firstAttribute="top" secondItem="uNV-sE-Nvq" secondAttribute="top" constant="20" id="BUt-wh-jpP"/>
                             <constraint firstItem="Bpr-LH-M8P" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="Hme-Ku-XiW"/>
                             <constraint firstItem="Bpr-LH-M8P" firstAttribute="leading" secondItem="uNV-sE-Nvq" secondAttribute="leading" id="PFX-4a-VUN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bpr-LH-M8P" secondAttribute="bottom" id="VH4-aK-vht"/>
                             <constraint firstItem="Bpr-LH-M8P" firstAttribute="top" secondItem="uNV-sE-Nvq" secondAttribute="bottom" id="WLx-cY-Ial"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xi2-J7-ooG" secondAttribute="trailing" id="c8r-pB-ZTA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uNV-sE-Nvq" secondAttribute="trailing" id="nxP-8B-j74"/>
                             <constraint firstItem="uNV-sE-Nvq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="q4s-ds-FVK"/>
                         </constraints>
@@ -51,6 +63,7 @@
                     <connections>
                         <outlet property="cameraButton" destination="tRh-1H-HFn" id="MX7-ac-SoW"/>
                         <outlet property="imagePickerView" destination="uNV-sE-Nvq" id="rbV-Ry-5Mx"/>
+                        <outlet property="topText" destination="xi2-J7-ooG" id="Twd-SU-Ue3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
