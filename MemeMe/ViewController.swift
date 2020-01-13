@@ -11,8 +11,12 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
 
+    // MARK: Class variables
+    @IBOutlet weak var topBar: UIToolbar!
+    @IBOutlet weak var bottomBar: UIToolbar!
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    private var memedImage: UIImage!
     
     // MARK: Top Text Definition
     @IBOutlet weak var topText: UITextField!
@@ -108,6 +112,7 @@ UINavigationControllerDelegate {
     }
     
     @objc private func keyboardWillShow(_ notification: Notification) {
+        view.frame.origin.y = 0
         view.frame.origin.y -= getKeyboardHeight(notification)
     }
 
@@ -123,11 +128,63 @@ UINavigationControllerDelegate {
     }
 
     private func unsubscribeFromKeyboardWillHideNotifications() {
-        keyboardWillHide()
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc private func keyboardWillHide() {
         view.frame.origin.y = 0
+    }
+    
+    // MARK: Generate Meme
+    @IBAction func shareMeme(_ sender: Any) {
+        memedImage = generateMemedImage()
+        openShareActivity()
+    }
+    
+    private func openShareActivity() {
+        // Prepare Activity view controller
+        let imagesToShare = [ memedImage! ]
+        let activityViewController = UIActivityViewController(activityItems: imagesToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // Present
+        self.present(activityViewController, animated: true, completion: save)
+    }
+    
+    private func generateMemedImage() -> UIImage {
+        
+        // Remove toolbars before using the frame to generate the view
+        toggleToolbars(visible: false)
+
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        // Make the toolbars visible again
+        toggleToolbars(visible: true)
+
+        return memedImage
+    }
+    
+    func save() {
+        // This section is to be used in the next Project submission
+        
+        // Create the meme
+        // let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
+    }
+    
+    private func toggleToolbars(visible: Bool) {
+        topBar.isHidden = !visible
+        bottomBar.isHidden = !visible
+    }
+    
+    // MARK: Cancel and reset the view
+    @IBAction func cancel(_ sender: Any) {
+        topText.text = topDefaultText
+        bottomText.text = bottomDefaultText
+        toggleToolbars(visible: true)
+        imagePickerView.image = nil
     }
 }
