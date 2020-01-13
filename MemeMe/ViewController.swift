@@ -40,8 +40,18 @@ UINavigationControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // Subscribe to keyboard events
+        subscribeToKeyboardWillShowNotifications()
+        subscribeToKeyboardWillHideNotifications()
         // Set camera button visibility
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Unsubscribe keyboard events
+        unsubscribeFromKeyboardWillShowNotifications()
+        unsubscribeFromKeyboardWillHideNotifications()
     }
     
     override func viewDidLoad() {
@@ -86,5 +96,38 @@ UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: Handle keyboard will show
+    private func subscribeToKeyboardWillShowNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+
+    private func unsubscribeFromKeyboardWillShowNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        view.frame.origin.y -= getKeyboardHeight(notification)
+    }
+
+    private func getKeyboardHeight(_ notification:Notification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
+        return keyboardSize.cgRectValue.height
+    }
+    
+    // MARK: Handle Keyboard will hide
+    private func subscribeToKeyboardWillHideNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    private func unsubscribeFromKeyboardWillHideNotifications() {
+        keyboardWillHide()
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillHide() {
+        view.frame.origin.y = 0
     }
 }
