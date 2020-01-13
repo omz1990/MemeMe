@@ -113,7 +113,10 @@ UINavigationControllerDelegate {
     
     @objc private func keyboardWillShow(_ notification: Notification) {
         view.frame.origin.y = 0
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        // Only shift the view up if the bottom text field has been selected
+        if bottomText.isFirstResponder {
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
 
     private func getKeyboardHeight(_ notification:Notification) -> CGFloat {
