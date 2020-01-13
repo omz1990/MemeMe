@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate,
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
 
     // MARK: Class variables
@@ -148,6 +148,12 @@ UINavigationControllerDelegate {
         // Prepare Activity view controller
         let imagesToShare = [ memedImage! ]
         let activityViewController = UIActivityViewController(activityItems: imagesToShare, applicationActivities: nil)
+        activityViewController.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
+
+            if completed {
+                self.save()
+            }
+        }
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
         // Present
@@ -169,11 +175,9 @@ UINavigationControllerDelegate {
         return memedImage
     }
     
-    func save() {
-        // This section is to be implemented in the next Project submission
-        
+    private func save() {
         // Create the meme
-        // let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
+        let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
     }
     
     private func toggleToolbars(visible: Bool) {
