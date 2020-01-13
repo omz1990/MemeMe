@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5695A69323CC42B600FBB05C /* MemeTextDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5695A69223CC42B600FBB05C /* MemeTextDelegate.swift */; };
 		56E1599023CB21E80072FF4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E1598F23CB21E80072FF4B /* AppDelegate.swift */; };
 		56E1599223CB21E80072FF4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E1599123CB21E80072FF4B /* SceneDelegate.swift */; };
 		56E1599423CB21E80072FF4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E1599323CB21E80072FF4B /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5695A69223CC42B600FBB05C /* MemeTextDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTextDelegate.swift; sourceTree = "<group>"; };
 		56E1598C23CB21E80072FF4B /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E1598F23CB21E80072FF4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56E1599123CB21E80072FF4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5695A69123CC428E00FBB05C /* Text Field Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				5695A69223CC42B600FBB05C /* MemeTextDelegate.swift */,
+			);
+			path = "Text Field Delegates";
+			sourceTree = "<group>";
+		};
 		56E1598323CB21E70072FF4B = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		56E1598E23CB21E80072FF4B /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
+				5695A69123CC428E00FBB05C /* Text Field Delegates */,
 				56E1598F23CB21E80072FF4B /* AppDelegate.swift */,
 				56E1599123CB21E80072FF4B /* SceneDelegate.swift */,
 				56E1599323CB21E80072FF4B /* ViewController.swift */,
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56E1599423CB21E80072FF4B /* ViewController.swift in Sources */,
+				5695A69323CC42B600FBB05C /* MemeTextDelegate.swift in Sources */,
 				56E1599023CB21E80072FF4B /* AppDelegate.swift in Sources */,
 				56E1599223CB21E80072FF4B /* SceneDelegate.swift in Sources */,
 			);

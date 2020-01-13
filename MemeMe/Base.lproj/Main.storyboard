@@ -34,10 +34,17 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="720"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xi2-J7-ooG">
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="topTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xi2-J7-ooG">
                                 <rect key="frame" x="0.0" y="64" width="414" height="57.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="bottomTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="brP-Gf-NhD" userLabel="Bottom Text">
+                                <rect key="frame" x="0.0" y="686.5" width="414" height="57.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -52,7 +59,10 @@
                             <constraint firstItem="Bpr-LH-M8P" firstAttribute="leading" secondItem="uNV-sE-Nvq" secondAttribute="leading" id="PFX-4a-VUN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bpr-LH-M8P" secondAttribute="bottom" id="VH4-aK-vht"/>
                             <constraint firstItem="Bpr-LH-M8P" firstAttribute="top" secondItem="uNV-sE-Nvq" secondAttribute="bottom" id="WLx-cY-Ial"/>
+                            <constraint firstItem="brP-Gf-NhD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aI2-4p-xyh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xi2-J7-ooG" secondAttribute="trailing" id="c8r-pB-ZTA"/>
+                            <constraint firstItem="brP-Gf-NhD" firstAttribute="bottom" secondItem="uNV-sE-Nvq" secondAttribute="bottom" constant="-20" id="kKD-0N-5qu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="brP-Gf-NhD" secondAttribute="trailing" id="leU-GG-XlH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uNV-sE-Nvq" secondAttribute="trailing" id="nxP-8B-j74"/>
                             <constraint firstItem="uNV-sE-Nvq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="q4s-ds-FVK"/>
                         </constraints>
@@ -61,6 +71,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bottomText" destination="brP-Gf-NhD" id="a6W-Mx-J3N"/>
                         <outlet property="cameraButton" destination="tRh-1H-HFn" id="MX7-ac-SoW"/>
                         <outlet property="imagePickerView" destination="uNV-sE-Nvq" id="rbV-Ry-5Mx"/>
                         <outlet property="topText" destination="xi2-J7-ooG" id="Twd-SU-Ue3"/>
