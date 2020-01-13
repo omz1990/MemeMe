@@ -12,19 +12,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
 
     // MARK: Class variables
-    @IBOutlet weak var topBar: UIToolbar!
-    @IBOutlet weak var bottomBar: UIToolbar!
-    @IBOutlet weak var imagePickerView: UIImageView!
-    @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet private weak var topBar: UIToolbar!
+    @IBOutlet private weak var bottomBar: UIToolbar!
+    @IBOutlet private weak var imagePickerView: UIImageView!
+    @IBOutlet private weak var cameraButton: UIBarButtonItem!
     private var memedImage: UIImage!
     
     // MARK: Top Text Definition
-    @IBOutlet weak var topText: UITextField!
+    @IBOutlet private weak var topText: UITextField!
     private let topDefaultText = "TOP"
     private let topTextDelegate: MemeTextDelegate
     
     // MARK: Bottom Text Definition
-    @IBOutlet weak var bottomText: UITextField!
+    @IBOutlet private weak var bottomText: UITextField!
     private let bottomDefaultText = "BOTTOM"
     private let bottomTextDelegate: MemeTextDelegate
     
@@ -75,11 +75,11 @@ UINavigationControllerDelegate {
     }
 
     // MARK: Pick an image Actions
-    @IBAction func pickAnImageFromAlbum(_ sender: Any) {
+    @IBAction private func pickAnImageFromAlbum(_ sender: Any) {
         pickAnImage(sourceType: .photoLibrary)
     }
     
-    @IBAction func pickAnImageFromCamera(_ sender: Any) {
+    @IBAction private func pickAnImageFromCamera(_ sender: Any) {
         pickAnImage(sourceType: .camera)
     }
     
@@ -155,14 +155,12 @@ UINavigationControllerDelegate {
     }
     
     private func generateMemedImage() -> UIImage {
-        
         // Remove toolbars before using the frame to generate the view
         toggleToolbars(visible: false)
-
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
-        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
 
         // Make the toolbars visible again
@@ -184,7 +182,7 @@ UINavigationControllerDelegate {
     }
     
     // MARK: Cancel and reset the view
-    @IBAction func cancel(_ sender: Any) {
+    @IBAction private func cancel(_ sender: Any) {
         topText.text = topDefaultText
         bottomText.text = bottomDefaultText
         toggleToolbars(visible: true)
