@@ -170,7 +170,7 @@ UINavigationControllerDelegate {
     }
     
     func save() {
-        // This section is to be used in the next Project submission
+        // This section is to be implemented in the next Project submission
         
         // Create the meme
         // let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
