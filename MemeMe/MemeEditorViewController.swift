@@ -157,7 +157,7 @@ UINavigationControllerDelegate {
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
         // Present
-        self.present(activityViewController, animated: true, completion: save)
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     private func generateMemedImage() -> UIImage {
@@ -178,6 +178,9 @@ UINavigationControllerDelegate {
     private func save() {
         // Create the meme
         let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
+        
+        // Add the Meme to the shared model
+        (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
     }
     
     private func toggleToolbars(visible: Bool) {
@@ -191,5 +194,6 @@ UINavigationControllerDelegate {
         bottomText.text = bottomDefaultText
         toggleToolbars(visible: true)
         imagePickerView.image = nil
+        navigationController?.popViewController(animated: true)
     }
 }
