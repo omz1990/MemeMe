@@ -16,6 +16,7 @@ UINavigationControllerDelegate {
     @IBOutlet private weak var bottomBar: UIToolbar!
     @IBOutlet private weak var imagePickerView: UIImageView!
     @IBOutlet private weak var cameraButton: UIBarButtonItem!
+    @IBOutlet private weak var shareButton: UIBarButtonItem!
     private var memedImage: UIImage!
     
     // MARK: Top Text Definition
@@ -63,6 +64,7 @@ UINavigationControllerDelegate {
         // Inilialize text fields
         setMemeTextAttributes(textField: topText, defaultText: topDefaultText, delegate: topTextDelegate)
         setMemeTextAttributes(textField: bottomText, defaultText: bottomDefaultText, delegate: bottomTextDelegate)
+        shareButton.isEnabled = false
     }
     
     // MARK: Set text attributes
@@ -94,6 +96,7 @@ UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imagePickerView.image = image
+            shareButton.isEnabled = true
         }
         dismiss(animated: true, completion: nil)
     }
@@ -152,6 +155,7 @@ UINavigationControllerDelegate {
 
             if completed {
                 self.save()
+                self.dismiss(animated: true, completion: nil)
             }
         }
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
@@ -171,7 +175,7 @@ UINavigationControllerDelegate {
 
         // Make the toolbars visible again
         toggleToolbars(visible: true)
-
+        
         return memedImage
     }
     
@@ -194,6 +198,7 @@ UINavigationControllerDelegate {
         bottomText.text = bottomDefaultText
         toggleToolbars(visible: true)
         imagePickerView.image = nil
-        navigationController?.popViewController(animated: true)
+        shareButton.isEnabled = false
+        self.dismiss(animated: true, completion: nil)
     }
 }

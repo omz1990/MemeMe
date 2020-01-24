@@ -99,6 +99,7 @@
                         <outlet property="bottomText" destination="brP-Gf-NhD" id="a6W-Mx-J3N"/>
                         <outlet property="cameraButton" destination="tRh-1H-HFn" id="MX7-ac-SoW"/>
                         <outlet property="imagePickerView" destination="uNV-sE-Nvq" id="rbV-Ry-5Mx"/>
+                        <outlet property="shareButton" destination="g0k-nU-2Z5" id="xi0-Oh-WYL"/>
                         <outlet property="topBar" destination="LYY-g7-XLi" id="26l-4t-Oj5"/>
                         <outlet property="topText" destination="xi2-J7-ooG" id="Twd-SU-Ue3"/>
                     </connections>
@@ -186,7 +187,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="YtZ-lK-H67">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jtZ-U6-GbN">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="jXz-gA-LoZ"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="jXz-gA-LoZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -199,11 +200,11 @@
             </objects>
             <point key="canvasLocation" x="-255.07246376811597" y="1050.6696428571429"/>
         </scene>
-        <!--Table-->
+        <!--Navigation Controller-->
         <scene sceneID="RwN-Ei-P35">
             <objects>
                 <navigationController id="nL5-PR-4ht" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table" id="f55-4b-Fkb"/>
+                    <tabBarItem key="tabBarItem" id="f55-4b-Fkb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5pl-iw-TZL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -285,7 +286,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="Gxi-Tn-Z9F">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jiL-lK-QLT">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="B8d-cx-AKo"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="automatic" id="B8d-cx-AKo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -10,7 +10,7 @@ import UIKit
 
 class SentMemesTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     private var memes: [Meme]! {
         return (UIApplication.shared.delegate as! AppDelegate).memes
@@ -18,7 +18,12 @@ class SentMemesTableViewController: UIViewController, UITableViewDataSource, UIT
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView!.reloadData()
+        self.tableView!.reloadData()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView!.separatorColor = UIColor.clear
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
