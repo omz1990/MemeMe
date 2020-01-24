@@ -26,10 +26,10 @@ class SentMemesTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell") as! MemeTableViewCell
         if let meme = memes?[(indexPath as IndexPath).row] {
-            cell.textLabel?.text = "\(meme.topText)...\(meme.bottomText)"
-            cell.imageView?.image = meme.memedImage
+            cell.title?.text = "\(meme.topText)...\(meme.bottomText)"
+            cell.memeImage?.image = meme.memedImage
         }
         return cell
     }
