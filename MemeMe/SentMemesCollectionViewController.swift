@@ -47,4 +47,10 @@ class SentMemesCollectionViewController: UIViewController, UICollectionViewDataS
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let memeDetailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
+        memeDetailController.meme = memes?[(indexPath as IndexPath).row]
+        self.navigationController!.pushViewController(memeDetailController, animated: true)
+    }
 }
