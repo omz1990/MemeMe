@@ -1,17 +1,14 @@
-# MemeMe
+# MemeMe v2.0 Complete
 Udacity iOS Nano-degree project
 
-### Landscape Full
-![Screenshot](https://www.ammologic.com/wp-content/uploads/2020/01/meme-me-v1-5.png)
+### Sent Memes All - Portrait
+![Screenshot](https://www.ammologic.com/wp-content/uploads/2020/01/SentMemes-Portrait.jpg)
 
-### Portrait - Full View
-![Screenshot](https://www.ammologic.com/wp-content/uploads/2020/01/meme-me-v1-1.png)
+### Sent Memes All - Landscape
+![Screenshot](https://www.ammologic.com/wp-content/uploads/2020/01/SentMemes-Landscape.jpg)
 
-### Share Activity
-![Screenshot](https://www.ammologic.com/wp-content/uploads/2020/01/meme-me-v1-3.png)
+### Meme Editor Final
+![Screenshot](https://www.ammologic.com/wp-content/uploads/2020/01/MemeEditorV2.jpg)
 
-### Portrait - Keyboard pushing view upwards
-![Screenshot](https://www.ammologic.com/wp-content/uploads/2020/01/meme-me-v1-2.png)
-
-### Landscape + Keyboard
-![Screenshot](https://www.ammologic.com/wp-content/uploads/2020/01/meme-me-v1-4.png)
+### Storyboard - Final
+![Screenshot](https://www.ammologic.com/wp-content/uploads/2020/01/MemeMe-V2-Storyboard.png)
