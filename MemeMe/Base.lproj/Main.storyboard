@@ -12,17 +12,17 @@
         <!--Meme Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="MemeEditorViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uNV-sE-Nvq">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="topTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xi2-J7-ooG">
-                                <rect key="frame" x="0.0" y="60" width="414" height="57.5"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="57.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -30,16 +30,16 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="bottomTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="brP-Gf-NhD" userLabel="Bottom Text">
-                                <rect key="frame" x="0.0" y="641.5" width="414" height="57.5"/>
+                                <rect key="frame" x="0.0" y="695.5" width="414" height="57.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYY-g7-XLi" userLabel="Top Bar">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="g0k-nU-2Z5" userLabel="Share">
+                                    <barButtonItem systemItem="action" id="g0k-nU-2Z5" userLabel="Share">
                                         <connections>
                                             <action selector="shareMeme:" destination="BYZ-38-t0r" id="snh-Ku-uZl"/>
                                         </connections>
@@ -53,7 +53,7 @@
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bpr-LH-M8P" userLabel="Bottom Bar">
-                                <rect key="frame" x="0.0" y="710" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="769" width="414" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="vUu-vK-Sul"/>
                                     <barButtonItem systemItem="camera" id="tRh-1H-HFn">
@@ -183,7 +183,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NxJ-pF-Zw1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Grid" id="4qS-hM-DcX"/>
+                    <tabBarItem key="tabBarItem" title="" id="4qS-hM-DcX"/>
                     <navigationItem key="navigationItem" title="Sent Memes" id="YtZ-lK-H67">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jtZ-U6-GbN">
                             <connections>
@@ -204,7 +204,7 @@
         <scene sceneID="RwN-Ei-P35">
             <objects>
                 <navigationController id="nL5-PR-4ht" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" id="f55-4b-Fkb"/>
+                    <tabBarItem key="tabBarItem" image="tableTab" id="f55-4b-Fkb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5pl-iw-TZL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -238,7 +238,6 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EA4-eB-fkt">
                                                     <rect key="frame" x="9" y="9" width="160" height="101"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="120" id="IQT-Z2-8y2"/>
                                                         <constraint firstAttribute="width" constant="160" id="MXs-qs-cAP"/>
@@ -282,11 +281,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jUK-hG-bWw"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Table" id="t5A-De-F8O"/>
+                    <tabBarItem key="tabBarItem" title="" id="t5A-De-F8O"/>
                     <navigationItem key="navigationItem" title="Sent Memes" id="Gxi-Tn-Z9F">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jiL-lK-QLT">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="automatic" id="B8d-cx-AKo"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="B8d-cx-AKo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -327,11 +326,11 @@
             </objects>
             <point key="canvasLocation" x="663.768115942029" y="371.65178571428572"/>
         </scene>
-        <!--Grid-->
+        <!--Navigation Controller-->
         <scene sceneID="8U6-i3-w36">
             <objects>
                 <navigationController id="HEZ-qm-TVz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Grid" id="Mnz-Pp-qEe"/>
+                    <tabBarItem key="tabBarItem" title="" image="collectionTab" id="Mnz-Pp-qEe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bsR-1t-Se2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -346,7 +345,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
+        <image name="collectionTab" width="30" height="30.5"/>
+        <image name="tableTab" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="B8d-cx-AKo"/>
