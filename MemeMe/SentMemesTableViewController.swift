@@ -8,21 +8,19 @@
 
 import UIKit
 
-class SentMemesTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SentMemesTableViewController: SentMemesBaseViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    private var memes: [Meme]! {
-        return (UIApplication.shared.delegate as! AppDelegate).memes
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // Reload the data when returning to the screen
         self.tableView!.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Remove the separators from the table
         self.tableView!.separatorColor = UIColor.clear
     }
     
@@ -31,7 +29,9 @@ class SentMemesTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Build and populate our custom MemeTableViewCell
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell") as! MemeTableViewCell
+        
         if let meme = memes?[(indexPath as IndexPath).row] {
             cell.title?.text = "\(meme.topText)...\(meme.bottomText)"
             cell.memeImage?.image = meme.memedImage
@@ -40,8 +40,6 @@ class SentMemesTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let memeDetailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailViewController") as! MemeDetailViewController
-        memeDetailController.meme = memes?[(indexPath as IndexPath).row]
-        self.navigationController!.pushViewController(memeDetailController, animated: true)
+        self.openMemeDetailsViewController(meme: memes?[(indexPath as IndexPath).row])
     }
 }
